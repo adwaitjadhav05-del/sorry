@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shraddha ❤️</title>
+
+<style>
+body{
+margin:0;
+padding:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+font-family:Arial,sans-serif;
+overflow:hidden;
+}
+
+.container{
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+width:80%;
+max-width:650px;
+color:white;
+box-shadow:0 0 20px rgba(0,0,0,0.2);
+z-index:10;
+position:relative;
+}
+
+h1{
+font-size:32px;
+}
+
+p{
+font-size:20px;
+line-height:1.7;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+margin-top:20px;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.heart{
+position:absolute;
+top:-20px;
+color:#ff3366;
+font-size:20px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="text">First... I am sorry ❤️</h1>
+
+<button onclick="nextStep()">Yes</button>
+
+</div>
+
+<script>
+
+let step=0;
+
+function nextStep(){
+
+let text=document.getElementById("text");
+
+step++;
+
+if(step==1){
+text.innerHTML="Ha ik aapan kaal khup bhandan kela sagla mazhya mule... but you know what? ❤️";
+}
+
+if(step==2){
+text.innerHTML=`Me kadhich tula kami padnar nhi ani kami padun nhi denar. Tuzhya sarkhi moti ani tulip sarkhi precious goshta he manya ahe khup khup. Me faulty ahe ani me khup ghaan hoto yess. Me aaj pasun tharvla tuzh ek ek gosht aikun tuzh sagla manya krnar. Ani me Adwait shapat gheto tula hya pudhe aaj cha convo repeat nhi honar ani radun nhi denar. I belong to you ❤️`;
+document.querySelector("button").style.display="none";
+}
+}
+
+
+function createHeart(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+heart.style.fontSize=(Math.random()*20+15)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
